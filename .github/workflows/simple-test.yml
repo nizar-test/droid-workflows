@@ -1,0 +1,12 @@
+name: Droid Review Simple
+on:
+  workflow_call:
+    secrets:
+      factory_api_key:
+        required: true
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: echo "Reusable workflow works!"
