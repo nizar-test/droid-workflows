@@ -1,7 +1,8 @@
 # factory-automation: 4d696d01-e55c-4737-a99d-ec96e03403bb
 name: QA Org Install Card
 on:
-  workflow_call: {}
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 jobs:
   droid:
     runs-on: ubuntu-latest
