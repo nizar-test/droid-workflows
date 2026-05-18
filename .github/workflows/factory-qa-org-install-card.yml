@@ -1,0 +1,17 @@
+# factory-automation: 4d696d01-e55c-4737-a99d-ec96e03403bb
+name: QA Org Install Card
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+jobs:
+  droid:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: factory-ai/factory-action@v1
+        with:
+          factory_api_key: ${{ secrets.FACTORY_API_KEY }}
+          prompt: code-review
+          review_depth: shallow
